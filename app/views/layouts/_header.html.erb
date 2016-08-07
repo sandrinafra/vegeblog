@@ -1,0 +1,10 @@
+<header>
+  	<%= link_to "Accueil", root_path %>
+	<% if current_user %>
+  	<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %>
+  	<%= link_to "Profil", destroy_user_session_path %>
+	<% else %>		
+	  <%= link_to "Connexion", new_user_session_path %>
+	  <%= link_to "Inscription", new_user_registration_path %>
+	<% end %>
+</header>
