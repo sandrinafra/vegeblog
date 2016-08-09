@@ -5,6 +5,6 @@
   	<%= link_to "Profil", destroy_user_session_path %>
 	<% else %>		
 	  <%= link_to "Connexion", new_user_session_path %>
-	  <%= link_to "Inscription", new_user_registration_path %>
+	  <%= link_to "Inscription", new_user_registration_path, method: :get %>
 	<% end %>
 </header>
