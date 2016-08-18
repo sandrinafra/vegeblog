@@ -7,6 +7,14 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def wait_article
+    @articles = Article.all
+  end
+
+  def inline_article
+    @articles = Article.all
+  end
+
   # GET /articles/1
   # GET /articles/1.json
   def show

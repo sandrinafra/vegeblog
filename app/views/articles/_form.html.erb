@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select(:status, ["En attente", "En ligne"]) %>
   </div>
   <div class="actions">
     <%= f.submit %>

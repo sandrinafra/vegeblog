@@ -1,10 +1,23 @@
 <header>
-  	<%= link_to "Accueil", root_path %>
-	<% if current_user %>
-  	<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %>
-  	<%= link_to "Profil", destroy_user_session_path %>
-	<% else %>		
-	  <%= link_to "Connexion", new_user_session_path %>
-	  <%= link_to "Inscription", new_user_registration_path, method: :get %>
-	<% end %>
+	<div class="row">
+		<div class="col-sm-5">
+			<h1>Vege Blog</h1>
+		</div>
+		<div class="lien col-sm-4">
+			<% if current_user %>
+		  	<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %>
+		  	<%= link_to "Profil", destroy_user_session_path %>
+			<% else %>		
+			  <%= link_to "Connexion", new_user_session_path %>
+			  <%= link_to "Inscription", new_user_registration_path, method: :get %>
+			<% end %>
+			  <%= link_to "Articles en attente", wait_articles_path %>
+			  <%= link_to "Articles en ligne", inline_articles_path %>
+		</div>
+		<div class="icons col-sm-3">
+	  	<%= image_tag("facebook.png", class:"icon") %>
+	  	<%= image_tag("twitter.png", class: "icon") %>
+	  	<%= image_tag("instagram.png", class: "icon") %>
+	  </div>
+	</div>
 </header>

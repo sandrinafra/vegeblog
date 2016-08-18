@@ -1,27 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-<div id="home">
-
-  <div id="home_header" class="row">
-
-    <div class="photo col-sm-6">
-      <%= image_tag "hamburger.jpg" %>
-    </div>
-
-    <div class="text col-sm-6">
-      <h2>Burger Vegan</h2>
-      <p>«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)</hp>
-    </div>
-
-  </div>
-
-
-
-
-
-</div>
-
 <h1>Listing Articles</h1>
 
 <table>
@@ -43,6 +21,9 @@
           <td><%= article.text %></td>
           <td><%= article.photo %></td>
           <td><%= article.status %></td>
+          <td><%= link_to 'Détails', article %></td>
+          <td><%= link_to 'Modifier', edit_article_path(article) %></td>
+          <td><%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     <% end %>
@@ -51,3 +32,4 @@
 
 <br>
 
+<%= link_to 'Nouveau Article', new_article_path %>
