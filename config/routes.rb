@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :articles
     get 'wait_articles' => 'articles#wait_article'
-    get 'inline_articles' => 'articles#inline_article'
+    get 'online_articles' => 'articles#online_article'
   
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

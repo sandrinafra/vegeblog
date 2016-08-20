@@ -8,11 +8,11 @@ class ArticlesController < ApplicationController
   end
 
   def wait_article
-    @articles = Article.all
+    @articles = Article.waiting
   end
 
-  def inline_article
-    @articles = Article.all
+  def online_article
+    @articles = Article.online
   end
 
   # GET /articles/1
