@@ -15,9 +15,19 @@
   <%= @article.photo %>
 </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @article.status %>
-</p>
+<h3>commentaires</h3>
 
-<%= link_to 'Modifier', edit_article_path(@article) %> |
+<% @article.comments.each do |comment| %>
+	<p><%= comment.text %></p>
+        <%= link_to 'supprimer', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% end %>
+
+<% if current_user %>
+	<%= render 'comments/form' %>
+<% else %>
+	<p>Vous devez vous connecter</p>
+<% end %>
+
+
+

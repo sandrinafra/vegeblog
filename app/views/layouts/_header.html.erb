@@ -1,18 +1,21 @@
 <header>
 	<div class="row">
 		<div class="col-sm-4">
-			<h1>Vege Blog</h1>
+			<h1><%= link_to "Vege Blog", root_path %></h1>
 		</div>
 		<div class="lien col-sm-4">
 			<% if current_user %>
 		  	<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %>
-		  	<%= link_to "Profil", destroy_user_session_path %>
+		  	<%= link_to "Profil", users_show_path(id: current_user.id) %>
 			<% else %>		
 			  <%= link_to "Connexion", new_user_session_path %>
-			  <%= link_to "Inscription", new_user_registration_path, method: :get %>
+			  <%= link_to "Inscription", new_user_registration_path %>
 			<% end %>
-			  <%= link_to "Articles en attente", wait_articles_path %>
-			  <%= link_to "Articles en ligne", inline_articles_path %>
+			<% if current_user && current_user.admin? %>
+			  <%= link_to "Articles", articles_path %>
+			  <%= link_to "Users", users_index_path %>
+			  <%= link_to "Commentaires", comments_path %>
+			<% end %>
 		</div>
 		<div class="icons col-sm-4">
 		  	<%= image_tag("facebook.png", class:"icon") %>

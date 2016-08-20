@@ -1,23 +1,21 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  before_action :require_user, except: [:home, :show]
+  before_action :require_admin, except: [:home, :show]
   # GET /articles
   # GET /articles.json
+  def home
+    @articles = Article.online
+  end
+
   def index
     @articles = Article.all
-  end
-
-  def wait_article
-    @articles = Article.waiting
-  end
-
-  def online_article
-    @articles = Article.online
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @comment = Comment.new
   end
 
   # GET /articles/new

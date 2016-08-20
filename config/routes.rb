@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'articles#index'
+  root 'articles#home'
+
   resources :likes
   resources :comments
   resources :articles
-    get 'wait_articles' => 'articles#wait_article'
-    get 'online_articles' => 'articles#online_article'
   
   devise_for :users
+     get 'users/index' => 'users#index'
+     get 'users/show' => 'users#show'
+     delete 'users/destroy' => 'users#destroy'
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

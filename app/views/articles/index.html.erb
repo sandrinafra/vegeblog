@@ -1,48 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-
-
-  <div class="row">
-
-    <div class="col-sm-6">
-      <%= image_tag "hamburger.jpg" %>
-    </div>
-
-    <div class="col-sm-6">
-      <h2>Burger Vegan</h2>
-      <p>«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)</hp>
-    </div>
-
-  </div>
-
-  <div class="row ">
-
-    <div class="col-sm-4 img_index">
-      <p>«Quiconque a entendu les cris d’un animal qu’on tue ne peut plus jamais manger de sa chair.» (Confucius)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-    <div class="col-sm-4 img_index">
-      <p>«La cause des animaux passe avant le souci de me ridiculiser.» (Emile Zola)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-    <div class="col-sm-4 img_index">
-      <p>«La grandeur d’une nation et ses progrès moraux peuvent être jugés de la manière dont elle traite les animaux.» (Gandhi)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-
-  </div>
-
-
-
-
-
-
-<!-- <h1>Listing Articles</h1>
+<h1>Listing Articles</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Tit</th>
+      <th>Title</th>
       <th>Text</th>
       <th>Photo</th>
       <th>Status</th>
@@ -52,17 +15,20 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <% if article.status == "En ligne" %>
-        <tr>
-          <td><%= article.title %></td>
-          <td><%= article.text %></td>
-          <td><%= article.photo %></td>
-          <td><%= article.status %></td>
-        </tr>
-      <% end %>
+      <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= article.photo %></td>
+        <td><%= article.status %></td>
+        <td><%= link_to 'Détails', article %></td>
+        <td><%= link_to 'Modifier', edit_article_path(article) %></td>
+        <td><%= link_to 'Supprimer', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
 
-<br> -->
+<br>
+
+<%= link_to 'Nouveau Article', new_article_path %>
 
