@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
+    def user?
+    	self.status == 'user'
+    end
+    
     def admin?
     	self.status == 'admin'
     end

@@ -3,10 +3,11 @@
 <p><%= @user.firstname %></p>
 <p><%= @user.lastname %></p>
 <p><%= @user.email %></p>
+<% if current_user.user? %>
+	<%= link_to "edit", edit_user_registration_path %>
+<% end %>
 
-<%= link_to "edit", edit_user_registration_path %>
-
-<h1>Comment</h1>
+<h1>My comments</h1>
 
 <% @user.comments.each do |comment| %>
 	<p><%= comment.text %></p>
@@ -16,8 +17,8 @@
 
 
 
-<h1>Likes</h1>
+<h1>Comments I'd like</h1>
 
-<% @user.likes.each do |like| %>
+<% @like.each do |like| %>
 	<p><%= like %></p>
 <% end %>
