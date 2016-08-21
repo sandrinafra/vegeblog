@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @comment = Comment.new
+    @like = Like.new
   end
 
   # GET /articles/new

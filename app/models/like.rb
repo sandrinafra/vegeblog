@@ -1,4 +1,4 @@
 class Like < ActiveRecord::Base
-  belongs_to :commment
+  belongs_to :comment
   belongs_to :user
 end

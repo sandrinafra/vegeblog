@@ -1,3 +1,23 @@
 <h1>profile</h1>
 
-<%= @user.firstname %>
+<p><%= @user.firstname %></p>
+<p><%= @user.lastname %></p>
+<p><%= @user.email %></p>
+
+<%= link_to "edit", edit_user_registration_path %>
+
+<h1>Comment</h1>
+
+<% @user.comments.each do |comment| %>
+	<p><%= comment.text %></p>
+<% end %>
+
+
+
+
+
+<h1>Likes</h1>
+
+<% @user.likes.each do |like| %>
+	<p><%= like %></p>
+<% end %>

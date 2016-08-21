@@ -17,11 +17,13 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= link_to article.title, article %></td>
-        <td><%= article.text %></td>
-        <td><%= article.photo %></td>
-      </tr>
+        <%= link_to article do %>
+      
+          <%= article.title %>
+          <%= article.text %>
+          <%= article.photo %>
+      
+        <% end %>
     <% end %>
   </tbody>
 </table>
