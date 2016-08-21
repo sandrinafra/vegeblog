@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 sandrina = User.new email: 'sandrinafranco0@gmail.com',
 					password: 'aaaaaaaa',
 					password_confirmation: 'aaaaaaaa',
@@ -52,4 +54,45 @@ if louna.save
 	puts "creation user louna OK"
 else
 	puts "error creating user louna"
+end
+
+
+leonard = Article.new title: 'Bugls vegan',
+					text: '«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)',
+					status: 'En ligne',
+					photo: 'hamburger.jpg'
+if leonard.save
+	puts "creation article leonard OK"
+else
+	puts "error creating article leonard"
+end
+
+confucius = Article.new title: 'Mousse au curry',
+					text: '«Quiconque a entendu les cris d’un animal qu’on tue ne peut plus jamais manger de sa chair.» (Confucius)',
+					status: 'En ligne',
+					photo: 'mousse.jpg'
+if confucius.save
+	puts "creation article confucius OK"
+else
+	puts "error creating article confucius"
+end
+
+zola = Article.new title: 'Mousse au curry',
+					text: '«La cause des animaux passe avant le souci de me ridiculiser.» (Emile Zola)',
+					status: 'En ligne',
+					photo: 'mousse.jpg'
+if zola.save
+	puts "creation article zola OK"
+else
+	puts "error creating article zola"
+end
+
+gandhi = Article.new title: 'Mousse au curry',
+					text: '«La grandeur d’une nation et ses progrès moraux peuvent être jugés de la manière dont elle traite les animaux.»',
+					status: 'En ligne',
+					photo: 'mousse.jpg'
+if gandhi.save
+	puts "creation article gandhi OK"
+else
+	puts "error creating article gandhi"
 end

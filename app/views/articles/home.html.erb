@@ -1,59 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Photo</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-        <p>
-          <%= link_to article do %>
-            <%= article.title %>
-            <%= article.text %>
-            <%= article.photo %>
-         <% end %>
-        </p>
-    <% end %>
-  </tbody>
-</table>
-
-
-
-
-<!--   <div class="row">
-
-    <div class="col-sm-6">
-      <%= image_tag "hamburger.jpg" %>
-    </div>
-
-    <div class="col-sm-6">
-      <h2>Burger Vegan</h2>
-      <p>«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)</hp>
-    </div>
-
-  </div>
-
-  <div class="row ">
-
-    <div class="col-sm-4 img_index">
-      <p>«Quiconque a entendu les cris d’un animal qu’on tue ne peut plus jamais manger de sa chair.» (Confucius)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-    <div class="col-sm-4 img_index">
-      <p>«La cause des animaux passe avant le souci de me ridiculiser.» (Emile Zola)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-    <div class="col-sm-4 img_index">
-      <p>«La grandeur d’une nation et ses progrès moraux peuvent être jugés de la manière dont elle traite les animaux.» (Gandhi)</p>
-      <%= image_tag "hamburger.jpg", class: "img" %>
-    </div>
-
-  </div> -->
-
+<div id="home">
+	<% @articles.each do |article| %>
+    <%= link_to article do %>
+    	<div class="row bloc">
+	    	<div class="col-sm-4">
+	      	<%= article.photo %>
+	    	</div>
+	    	<div class="col-sm-8">
+	      	<h3><%= article.title %></h3>
+	      	<p><%= article.text %></p>
+	    	</div>
+    	</div>
+   	<% end %>
+	<% end %>
+</div>

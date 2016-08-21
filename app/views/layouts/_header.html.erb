@@ -1,9 +1,9 @@
 <header>
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-sm-2 logo">
 			<h1><%= link_to "Vege Blog", root_path %></h1>
 		</div>
-		<div class="lien col-sm-4">
+		<div class="lien col-sm-8 lien">
 			<% if current_user %>
 		  	<%= link_to "Deconnexion", destroy_user_session_path, method: :delete %>
 		  	<%= link_to "Profil", users_show_path(id: current_user.id) %>
@@ -17,7 +17,7 @@
 			  <%= link_to "Commentaires", comments_path %>
 			<% end %>
 		</div>
-		<div class="icons col-sm-4">
+		<div class="icons col-sm-2 sociaux">
 		  	<%= image_tag("facebook.png", class:"icon") %>
 		  	<%= image_tag("twitter.png", class: "icon") %>
 		  	<%= image_tag("instagram.png", class: "icon") %>
