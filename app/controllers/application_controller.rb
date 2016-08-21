@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
 
   before_filter :configure_devise_params, if: :devise_controller?
   def configure_devise_params
-    devise_parameter_sanitizer.for(:sign_up) << :firstname << :lastname
-    devise_parameter_sanitizer.for(:account_update) << :firstname << :lastname
+    devise_parameter_sanitizer.for(:sign_up) << :firstname << :lastname << :photo
+    devise_parameter_sanitizer.for(:account_update) << :firstname << :lastname << :photo
   end
 
   def require_user

@@ -1,8 +1,36 @@
 source 'https://rubygems.org'
 
-gem 'devise'
+
+### Personal gems ###
 
 gem 'bootstrap-sass'
+gem 'devise'
+# Gem for files upload
+gem 'carrierwave'
+# Gem for resizing images
+gem 'mini_magick'
+# gem for schedule tasks through sidekiq
+# gem "sidekiq-cron", "~> 0.4.0"
+# Gem for sidekiq web UI interface
+# gem 'sinatra', :require => nil
+# Gem for asynchronous tasks
+# gem 'sidekiq'
+# Gem for environement variables
+# gem 'dotenv-rails'
+# Use mysql as the database for Active Record
+# gem 'mysql2', '>= 0.3.13', '< 0.5'
+# Gems for pdf generation
+# gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary'
+# Add mail gem for send and recieve emails
+# gem "mail"
+# Add font awesome gem for stars in grade page
+gem "font-awesome-rails"
+
+######################
+
+
+
 gem 'autoprefixer-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

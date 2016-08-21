@@ -30,7 +30,7 @@
 
 
   <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
-    <%= link_to image_tag('poubelle.png'), comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= image_tag('edit.png', class: "display_comment_form") %>
 
     <div class="comment_form">
