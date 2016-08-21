@@ -19,6 +19,6 @@
 
 <h1>Comments I'd like</h1>
 
-<% @like.each do |like| %>
-	<p><%= like %></p>
+<% @user.likes.each do |like| %>
+	<p><%= like.comment.text %></p>
 <% end %>
