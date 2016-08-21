@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
-
-
 <table>
   <thead>
     <tr>
@@ -17,13 +13,13 @@
 
   <tbody>
     <% @articles.each do |article| %>
-        <%= link_to article do %>
-      
-          <%= article.title %>
-          <%= article.text %>
-          <%= article.photo %>
-      
-        <% end %>
+        <p>
+          <%= link_to article do %>
+            <%= article.title %>
+            <%= article.text %>
+            <%= article.photo %>
+         <% end %>
+        </p>
     <% end %>
   </tbody>
 </table>

@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
   before_action :require_user
-  before_action :require_admin
+  before_action :require_admin, except: [:create]
 
   # GET /likes
   # GET /likes.json

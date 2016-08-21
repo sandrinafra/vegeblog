@@ -1,5 +1,7 @@
 <h1>profile</h1>
 
+	<%= image_tag @user.photo, class: "photo" %>
+
 <p><%= @user.firstname %></p>
 <p><%= @user.lastname %></p>
 <p><%= @user.email %></p>
@@ -7,18 +9,29 @@
 	<%= link_to "edit", edit_user_registration_path %>
 <% end %>
 
-<h1>My comments</h1>
+<h1>Mes commentaires</h1>
 
 <% @user.comments.each do |comment| %>
 	<p><%= comment.text %></p>
+  	<p><%= "#{comment.likes.count} likes" %></p>
 <% end %>
 
+<h1>Mes commentaires likés</h1>
 
+<% @user.comments.each do |comment| %>
+	<% if comment.likes.any? %>
+		<p><%= comment.text %></p>
+  		<p><%= "#{comment.likes.count} likes" %></p>
+		<% comment.likes.each do |like| %>
+			<p>- <%= like.user.lastname %> <%= like.user.firstname %></p>
+		<% end %>
+	<% end %>
+<% end %>
 
-
-
-<h1>Comments I'd like</h1>
+<h1>Les commentaire que j'ai liké</h1>
 
 <% @user.likes.each do |like| %>
+	<p><%= like.comment.user.lastname %> <%= like.comment.user.firstname %></p>
 	<p><%= like.comment.text %></p>
+  	<p><%= "#{like.comment.likes.count} likes" %></p>
 <% end %>

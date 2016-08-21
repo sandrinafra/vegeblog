@@ -7,6 +7,13 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :likes
 
+  before_save do
+    self.firstname = firstname.capitalize
+    self.lastname = lastname.capitalize
+    self.email = email.downcase
+    self.photo = 'avatars/' + rand(1...67).to_s + '.png' if self.photo.blank?
+  end
+
     def user?
     	self.status == 'user'
     end
