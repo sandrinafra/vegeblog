@@ -60,7 +60,7 @@ end
 leonard = Article.new title: 'Bugls vegan',
 					text: '«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)',
 					status: 'En ligne',
-					photo: 'hamburger.jpg'
+					image: open(File.join(Rails.root, 'app/assets/images/hamburger.jpg'))
 if leonard.save
 	puts "creation article leonard OK"
 else
@@ -70,7 +70,8 @@ end
 confucius = Article.new title: 'Mousse au curry',
 					text: '«Quiconque a entendu les cris d’un animal qu’on tue ne peut plus jamais manger de sa chair.» (Confucius)',
 					status: 'En ligne',
-					photo: 'mousse.jpg'
+					image: open(File.join(Rails.root, 'app/assets/images/hamburger.jpg'))
+
 if confucius.save
 	puts "creation article confucius OK"
 else
@@ -80,7 +81,7 @@ end
 zola = Article.new title: 'Mousse au curry',
 					text: '«La cause des animaux passe avant le souci de me ridiculiser.» (Emile Zola)',
 					status: 'En ligne',
-					photo: 'mousse.jpg'
+					image: open(File.join(Rails.root, 'app/assets/images/hamburger.jpg'))
 if zola.save
 	puts "creation article zola OK"
 else
@@ -90,7 +91,7 @@ end
 gandhi = Article.new title: 'Mousse au curry',
 					text: '«La grandeur d’une nation et ses progrès moraux peuvent être jugés de la manière dont elle traite les animaux.»',
 					status: 'En ligne',
-					photo: 'mousse.jpg'
+					image: open(File.join(Rails.root, 'app/assets/images/hamburger.jpg'))
 if gandhi.save
 	puts "creation article gandhi OK"
 else

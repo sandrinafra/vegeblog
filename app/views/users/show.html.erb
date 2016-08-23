@@ -1,7 +1,7 @@
 <div id="user_show">
 
 	<div class="row detail_user">
-		<div class="col-sm-6">
+		<div class="col-sm-6 photo_bloc">
 			<%= image_tag @user.photo, class: "photo" %>
 		</div>
 		<div class="col-sm-6">
@@ -14,100 +14,105 @@
 		</div>
 	</div>
 
-		
-	<h3>Mes commentaires</h3>
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Titres</th>
-				<th>Commentaires</th>
-				<th>Nb de likes</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @user.comments.each do |comment| %>
-				<tr>
-					<td><%= comment.article.title %></td>
-					<td><%= comment.text %></td>
-					<td>
-						<div class="dropdown">
-							<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-					  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<% comment.likes.each do |like| %>
-									<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
-								<% end %>
-							</ul>
-						</div>
-					</td>
-			  <tr>
-			<% end %>
-		</tbody>
-	</table>
+		<div class="detail_comment">	
+			<h3>Mes commentaires</h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Titres</th>
+						<th>Commentaires</th>
+						<th>Nb de likes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.comments.each do |comment| %>
+							<tr>
+								<td><%= comment.article.title %></td>
+								<td><%= comment.text %></td>
+								<td>
+									<div class="dropdown">
+										<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+								  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<% comment.likes.each do |like| %>
+												<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+											<% end %>
+										</ul>
+									</div>
+								</td>
+						  <tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 
-	<h3>Mes commentaires likés</h3>
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Titres</th>
-				<th>Commentaires</th>
-				<th>Nb de likes</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @user.comments.each do |comment| %>
-				<% if comment.likes.any? %>
-				<tr>
-					<td><%= comment.article.title %></td>
-					<td><%= comment.text %></td>
-					<td>
-						<div class="dropdown">
-							<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-					  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<% comment.likes.each do |like| %>
-									<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
-								<% end %>
-							</ul>
-						</div>
-					</td>
-				</tr>
-				<% end %>
-			<% end %>
-		</tbody>
-	</table>
+		<div class="detail_comment">	
+			<h3>Mes commentaires likés</h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Titres</th>
+						<th>Commentaires</th>
+						<th>Nb de likes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.comments.each do |comment| %>
+						<% if comment.likes.any? %>
+							<tr>
+								<td><%= comment.article.title %></td>
+								<td><%= comment.text %></td>
+								<td>
+									<div class="dropdown">
+										<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+								  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu">
+											<% comment.likes.each do |like| %>
+												<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+											<% end %>
+										</ul>
+									</div>
+								</td>
+							</tr>
+						<% end %>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 
-	<h3>Les commentaire que j'ai liké</h3>
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>Titres</th>
-				<th>Commentaires</th>
-				<th>Posteur</th>
-				<th>Nb de likes</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @user.likes.each do |like| %>
-			<tr>
-				<td><%= like.comment.article.title %></td>
-				<td><%= like.comment.text %></td>
-				<td><%= like.comment.user.lastname %> <%= like.comment.user.firstname %></td>
-				<td>
-					<div class="dropdown">
-						<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-				  	<%= "#{like.comment.likes.count} likes" %><span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-								<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
-						</ul>
-					</div>
-				</td>
-			</tr>
-			<% end %>
-		</tbody>
-	</table>
+		<div class="detail_comment">	
+			<h3>Les commentaire que j'ai liké</h3>
+			<table class="table table-striped les_C_L">
+				<thead>
+					<tr>
+						<th>Titres</th>
+						<th>Commentaires</th>
+						<th>Posteur</th>
+						<th>Nb de likes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @user.likes.each do |like| %>
+						<tr>
+							<td><%= like.comment.article.title %></td>
+							<td><%= like.comment.text %></td>
+							<td><%= like.comment.user.lastname %> <%= like.comment.user.firstname %></td>
+							<td>
+								<div class="dropdown">
+									<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+							  	<%= "#{like.comment.likes.count} likes" %><span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu">
+											<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 
 </div>
