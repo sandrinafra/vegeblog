@@ -11,6 +11,8 @@
 	</head>
 	<body class="<% params[:controller] %> <% params[:action] %>">
 		<%= render "layouts/header" %>
-		<%= yield %>
+		<div class="container">
+			<%= yield %>
+		</div>
 	</body>
 </html>

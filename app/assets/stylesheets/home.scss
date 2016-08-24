@@ -1,36 +1,44 @@
+// #home
+// {
+// 	.bloc
+// 	{
+// 		width: 80%;
+// 		margin: auto;
+// 		margin-top: 40px;
+// 		margin-bottom: 10px;
+// 		background-color: #fff;
+// 		height: 200px;
+// 		text-align: center;
+//
+// 		h3
+// 		{
+// 			font-family: "arvo";
+// 		}
+//
+// 		p
+// 		{
+// 			font-family: "pacifico";
+// 			width: 70%;
+// 			margin: auto;
+// 			font-size: 18px;
+// 		}
+// 		.image
+// 		{
+// 			width: 100%;
+// 		}
+// 	}
+
+// }
+
 #home
 {
-	.bloc 
-	{
-		width: 80%;
-		margin: auto;
-		margin-top: 40px;
-		margin-bottom: 10px;
-		background-color: #fff;
-		height: 200px;
-		text-align: center;
+  ol
+  {
+  list-style: none;
+  }
 
-		h3
-		{
-			font-family: "arvo";
-		}
-		
-		p
-		{
-			font-family: "pacifico";
-			width: 70%;
-			margin: auto;
-			font-size: 18px;
-		}
-		.image
-		{
-			width: 100%;
-		}
-	}
-	.carousel-inner > .item > img,
-	.carousel-inner >.item >a > img 
-	{
-		width: 70%;
-		margin: auto;
-	}
+  img
+  {
+  width: 100%;
+  }
 }

@@ -2,28 +2,31 @@ header
 {
 	background-color: #fff;
 	text-align: center;
+  padding: 10px;
+  text-decoration: inherit;
 	.logo
 	{
 		font-family: "Pacifico";
+    margin: 0;
+    margin-bottom: 10px;
 	}
+
+  .lien
+  {
+    font-size: 15px;
+    margin-top: 15px;
+    a
+    {
+      margin: 8px;
+    }
+  }
 
 	.sociaux
 	{
-		margin-top: 17px;
+		margin-top: 8px;
 		img
 		{
 			margin: 5px;
-		}
-	}
-
-	.lien
-	{
-		font-family: "Arvo";
-		font-size: 15px;
-		margin-top: 24px;
-		a
-		{
-			margin: 8px;
 		}
 	}
 }
