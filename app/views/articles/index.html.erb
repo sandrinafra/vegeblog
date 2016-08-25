@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="article_index">
 <%= link_to 'Nouvel Article', new_article_path, class: "btn btn-info" %>
-  <h3>Liste des articles en ligne</h3>
+  <h4>Liste des articles en ligne</h4>
     <table class="table table-striped">
       <tbody>
         <% @articles.each do |article| %>
@@ -16,7 +16,7 @@
         <% end %>
       </tbody>
     </table>
-    <h3>Liste des articles en attente</h3>
+    <h4>Liste des articles en attente</h4>
     <table class="table table-striped">
       <tbody>
         <% @articles.each do |article| %>

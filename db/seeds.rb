@@ -57,11 +57,11 @@ else
 end
 
 
-leonard = Article.new title: 'Bugls vegan',
+leonard = Article.new title: 'bounty vegan',
 					text: '«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)',
 					status: 'En ligne',
 					content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut ligula aliquet, tempus sem sed, sollicitudin nisl. Aenean nec nunc ligula. Mauris auctor mi sit amet diam mattis rhoncus. Aliquam pretium leo odio, sit amet molestie lorem eleifend non. Pellentesque eget est blandit, sollicitudin justo quis, bibendum metus. Proin eleifend sapien at ligula rutrum sollicitudin. Praesent facilisis ac elit ut interdum. ",
-					image: open(File.join(Rails.root, 'app/assets/images/hamburger.jpg'))
+					image: open(File.join(Rails.root, 'app/assets/images/bounty_vegan.jpg'))
 if leonard.save
 	puts "creation article leonard OK"
 else

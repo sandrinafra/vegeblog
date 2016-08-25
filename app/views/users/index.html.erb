@@ -1,4 +1,5 @@
 <div id="user_index">
+	<h4>Mes utilisateurs</h4>
 	<table class="table table-striped">
 		<thead>
 			<tr>
@@ -11,7 +12,7 @@
 		<tbody>
 			<% @users.each do |user| %>
 				<tr>
-					<td><%= user.firstname %></td>	
+					<td><%= user.firstname %></td>
 					<td><%= user.lastname %></td>
 					<td><%= user.email %></td>
 	        		<td><%= link_to 'Supprimer', users_destroy_path(id: user.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>

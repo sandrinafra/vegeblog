@@ -1,57 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div id="show_article">
+  <p id="notice"><%= notice %></p>
+  <h3>
+    <%= @article.title %>
+  </h3>
+  <div class="row">
+    <div class="col-sm-6">
+        <%= image_tag @article.image, class: "photo" %>
+    </div>
+    <div class="col-sm-6">
+      <p>
+        <%= @article.text %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @article.image, class: "photo" %>
-</p>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+  <div class="content">
+    <h4>Recette</h4>
+    <p>
+      <%= @article.content %>
+    </p>
+  </div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+  <div class="comment">
+    <h4>Commentaires</h4>
 
-<p>
-  <strong>:</strong>
-  <%= @article.content %>
-</p>
+    <% @article.comments.each do |comment| %>
+      <div class="comment_user">
+        <%= image_tag comment.user.photo, class: "photo" %>
+        <%= comment.user.lastname %> <%= comment.user.firstname %>
+      	<%= comment.text %>
+      </div>
+      <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
+        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= image_tag('edit.png', class: "display_comment_form") %>
 
-
-<h3>commentaires</h3>
-
-<% @article.comments.each do |comment| %>
-
-	<p><%= comment.text %></p>
-  <p><%= "#{comment.likes.count} likes" %></p>
-    <% if !comment.liked_by?(current_user) %>
-      <%= form_for(@like) do |f| %>
-        <%= f.hidden_field :comment_id, value: comment.id %>
-        <%= image_submit_tag("like.png") %>
+        <div class="comment_form">
+          <%= form_for(comment) do |f| %>
+            <%= f.text_field :text, value: comment.text %>
+            <%= submit_tag "valider" %>
+          <% end %>
+        </div>
       <% end %>
+        <% if !comment.liked_by?(current_user) %>
+          <%= form_for(@like) do |f| %>
+            <%= f.hidden_field :comment_id, value: comment.id %>
+            <%= image_submit_tag("like.png") %>
+          <% end %>
+        <% end %>
+        <%= "#{comment.likes.count} likes" %>
     <% end %>
 
-
-  <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
-    <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= image_tag('edit.png', class: "display_comment_form") %>
-
-    <div class="comment_form">
-      <%= form_for(comment) do |f| %>
-        <%= f.text_field :text, value: comment.text %>
-        <%= submit_tag "valider" %>
-      <% end %>
-    </div>
-  <% end %>
-<% end %>
-
-<% if current_user %>
-  <%= render 'comments/form' %>
-<% else %>
-	<p>Vous devez vous connecter</p>
-<% end %>
+    <% if current_user %>
+      <%= render 'comments/form' %>
+    <% else %>
+    	<p>Vous devez vous connecter</p>
+    <% end %>
+  </div>
+</div>
 
 
 
