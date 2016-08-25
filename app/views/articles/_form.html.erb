@@ -1,33 +1,48 @@
-<%= form_for(@article) do |f| %>
-  <% if @article.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+<div class="container" id="article_new">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading title">
+          <h2>Nouvel article</h2>
+        </div>
+        <div class="panel-body">
+          <fieldset>
+          <%= form_for(@article) do |f| %>
+            <% if @article.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
 
-      <ul>
-      <% @article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                <ul>
+                <% @article.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <%= f.label :titre %><br>
+            <div class="form-group">
+              <%= f.text_field :title %>
+            </div>
+            <%= f.label :texte %><br>
+            <div class="form-group">
+              <%= f.text_area :text %>
+            </div>
+            <%= f.label :contenu %><br>
+            <div class="form-group">
+              <%= f.text_area :content %>
+            </div>
+            <%= f.label :image %><br>
+            <div class="form-group">
+              <%= f.file_field :image %>
+            </div>
+            <%= f.label :status %><br>
+            <div class="form-group">
+              <%= f.select(:status, ["En attente", "En ligne"]) %>
+            <%= f.submit "Validé", class: "btn btn-lg btn-block" %>
+            <% end %>
+          </fieldset>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select(:status, ["En attente", "En ligne"]) %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

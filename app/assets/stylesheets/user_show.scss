@@ -10,16 +10,19 @@
  		padding: 20px 0;
  	}
 
- 	h3
- 	{
- 		text-align: center;
- 	}
   img
   {
+    height: 150px;
     width: 150px;
+    border-radius: 50%;
   }
   .detail_comment
   {
     background-color: #fff;
+
+    h3
+    {
+      text-align: center;
+    }
   }
  }

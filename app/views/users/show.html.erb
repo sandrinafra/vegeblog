@@ -5,8 +5,8 @@
 			<%= image_tag @user.photo, class: "photo" %>
 		</div>
 		<div class="col-sm-6">
-			<p><%= @user.firstname %></p>
-			<p><%= @user.lastname %></p>
+			<h3><%= @user.lastname %></3>
+			<h4><%= @user.firstname %></h4>
 			<p><%= @user.email %></p>
 			<% if current_user.id == @user.id %>
 				<%= link_to "edit", edit_user_registration_path, class: "btn btn-info" %>
