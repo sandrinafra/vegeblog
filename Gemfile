@@ -9,6 +9,7 @@ gem 'devise'
 gem 'carrierwave'
 # Gem for resizing images
 gem 'mini_magick'
+gem 'rake'
 # gem for schedule tasks through sidekiq
 # gem "sidekiq-cron", "~> 0.4.0"
 # Gem for sidekiq web UI interface

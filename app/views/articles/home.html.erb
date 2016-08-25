@@ -2,7 +2,7 @@
 <div id="home">
 	<p id="notice"><%= notice %></p>
 
-	<div class="row">
+	<div class="row carousel">
 		<div id="mycarousel" class="carousel slide col-md-6" data-ride="carousel">
 			<ol class="carousel-indicator">
 				<li data-target="#my_carousel" data-slide-to="0" class="active"></li>
@@ -29,30 +29,30 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6 text_carousel">
 			<h1>Lorem ipsum</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi </p>
+			<p>J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)</p>
 		</div>
 	</div>
 
-
-
 	<% @articles.each.with_index do |article, i| %>
-		<% if i % 3 == 0 %>
+		<% if i % 2 == 0 %>
 			<div class="row">
 		<% end %>
 
 			<div class="col-sm-4">
 				<%= link_to article do %>
-					<h3><%= article.title %></h3>
-	      	<p><%= article.text %></p>
-					<%= image_tag article.image %>
+					<div class="title">
+						<h4><%= article.title %></h4>
+		      	<p><%= article.text %></p>
+					</div>
+						<%= image_tag article.image %>
    			<% end %>
 			</div>
 
-	<% if i % 3 == 0 && i != 0 %>
-		</div>
-	<% end %>
+		<% if i % 2 == 0 && i != 0 %>
+			</div>
+		<% end %>
 
 	<% end %>
 </div>

@@ -22,6 +22,7 @@ body
 {
 	background-color: #F2f2f2;
 	font-family: "Arvo";
+  margin: 15px;
 }
 
 a
@@ -31,4 +32,8 @@ a
 	{
 		text-decoration: none;
 	}
+}
+.container
+{
+  width: 80%;
 }

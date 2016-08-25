@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20160807170211) do
   create_table "articles", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "text",       null: false
+    t.text     "content",    null: false
     t.string   "image"
     t.string   "status",     null: false
     t.datetime "created_at", null: false
