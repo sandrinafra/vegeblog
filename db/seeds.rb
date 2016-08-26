@@ -12,7 +12,7 @@ sandrina = User.new email: 'sandrinafranco0@gmail.com',
 					password: 'aaaaaaaa',
 					password_confirmation: 'aaaaaaaa',
 					firstname: 'sandrina',
-					lastname: 'franco',
+					lastname: 'bernard',
 					status: 'admin'
 if sandrina.save
 	puts "creation user sandrina OK"
@@ -24,7 +24,7 @@ laure = User.new email: 'laure@gmail.com',
 					password: 'aaaaaaaa',
 					password_confirmation: 'aaaaaaaa',
 					firstname: 'laure',
-					lastname: 'franco',
+					lastname: 'beli',
 					status: 'user'
 if laure.save
 	puts "creation user laure OK"
@@ -48,7 +48,7 @@ louna = User.new email: 'louna@gmail.com',
 					password: 'aaaaaaaa',
 					password_confirmation: 'aaaaaaaa',
 					firstname: 'louna',
-					lastname: 'franco',
+					lastname: 'ramin',
 					status: 'user'
 if louna.save
 	puts "creation user louna OK"
@@ -112,4 +112,35 @@ if darwin.save
 else
 	puts "error creating article darwin"
 end
+
+
+# com1 = Comment.new text: 'Super la recette!!',
+# 					user_id: "2",
+# 					article_id: "3"
+# if com1.save
+# 	puts "creation article com1 OK"
+# else
+# 	puts "error creating com1 "
+# end
+
+# com2 = Comment.new text: 'cool!'
+# if com2.save
+# 	puts "creation article com2 OK"
+# else
+# 	puts "error creating com2 "
+# end
+
+# com3 = Comment.new text: 'Super blog!!'
+# if com3.save
+# 	puts "creation com3  OK"
+# else
+# 	puts "error creating com3 "
+# end
+
+# com4 = Comment.new text: 'Comment te contacter?!'
+# if com4.save
+# 	puts "creation article com4 OK"
+# else
+# 	puts "error creating com4 "
+# end
 

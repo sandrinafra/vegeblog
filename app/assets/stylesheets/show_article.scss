@@ -1,12 +1,19 @@
 #show_article
 {
+  background-color: #fff;
+  margin: auto;
+  width: 80%;
+
+  .comment_form
+  {
+    display: none;
+  }
+
   h3
   {
     text-align: center;
   }
-  background-color: #fff;
-  margin: auto;
-  width: 80%;
+
   .content
   {
     h4
@@ -14,21 +21,24 @@
       text-align: center;
       padding-top: 30px;
     }
+
     p
     {
       margin: 30px 40px;
     }
   }
+
   .comment
   {
     width: 60%;
     margin-left: 40px;
+
     h4
     {
       text-decoration: underline;
-
     }
   }
+
   .comment_user
   {
     img
