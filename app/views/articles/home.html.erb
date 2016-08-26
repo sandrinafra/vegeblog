@@ -1,7 +1,5 @@
 
 <div id="home">
-	<p id="notice"><%= notice %></p>
-
 	<div class="row carousel">
 		<div id="mycarousel" class="carousel slide col-md-6" data-ride="carousel">
 			<ol class="carousel-indicator">
@@ -36,7 +34,7 @@
 	</div>
 
 	<% @articles.each.with_index do |article, i| %>
-		<% if i % 2 == 0 %>
+		<% if (i % 3) == 0 %>
 			<div class="row">
 		<% end %>
 
@@ -50,7 +48,7 @@
    			<% end %>
 			</div>
 
-		<% if i % 2 == 0 && i != 0 %>
+		<% if i % 3 == 2 %>
 			</div>
 		<% end %>
 

@@ -4,12 +4,16 @@ source 'https://rubygems.org'
 ### Personal gems ###
 
 gem 'bootstrap-sass'
+gem 'rake'
 gem 'devise'
 # Gem for files upload
 gem 'carrierwave'
 # Gem for resizing images
 gem 'mini_magick'
-gem 'rake'
+# Add font awesome gem for stars in grade page
+gem "font-awesome-rails"
+# Add Ransack gem for intern research
+# gem "ransack"
 # gem for schedule tasks through sidekiq
 # gem "sidekiq-cron", "~> 0.4.0"
 # Gem for sidekiq web UI interface
@@ -25,8 +29,6 @@ gem 'rake'
 # gem 'wkhtmltopdf-binary'
 # Add mail gem for send and recieve emails
 # gem "mail"
-# Add font awesome gem for stars in grade page
-gem "font-awesome-rails"
 
 ######################
 

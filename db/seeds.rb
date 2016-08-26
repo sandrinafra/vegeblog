@@ -102,15 +102,26 @@ else
 	puts "error creating article gandhi"
 end
 
-darwin = Article.new title: 'Riz sauté végétarien',
+darwin = Article.new title: 'Pâte chinois végétarien',
 					text: '«Peu d’hommes pourraient supporter pendant cinq minutes l’observation d’un animal se débattant, avec un membre écrasé ou déchiqueté.» (Darwin)',
 					status: 'En ligne',
 					content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut ligula aliquet, tempus sem sed, sollicitudin nisl. Aenean nec nunc ligula. Mauris auctor mi sit amet diam mattis rhoncus. Aliquam pretium leo odio, sit amet molestie lorem eleifend non. Pellentesque eget est blandit, sollicitudin justo quis, bibendum metus. Proin eleifend sapien at ligula rutrum sollicitudin. Praesent facilisis ac elit ut interdum. ",
-					image: open(File.join(Rails.root, 'app/assets/images/riz.jpg'))
+					image: open(File.join(Rails.root, 'app/assets/images/patechinoisvegetarien.jpg'))
 if darwin.save
 	puts "creation article darwin OK"
 else
 	puts "error creating article darwin"
+end
+
+lincoln = Article.new title: "Tagine l'égumes",
+					text: '«Je suis en faveur des droits des animaux autant que des droits de l’homme.» (Abraham Lincoln)',
+					status: 'En ligne',
+					content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut ligula aliquet, tempus sem sed, sollicitudin nisl. Aenean nec nunc ligula. Mauris auctor mi sit amet diam mattis rhoncus. Aliquam pretium leo odio, sit amet molestie lorem eleifend non. Pellentesque eget est blandit, sollicitudin justo quis, bibendum metus. Proin eleifend sapien at ligula rutrum sollicitudin. Praesent facilisis ac elit ut interdum. ",
+					image: open(File.join(Rails.root, 'app/assets/images/tagine.jpg'))
+if lincoln.save
+	puts "creation article Lincoln OK"
+else
+	puts "error creating article Lincoln"
 end
 
 
