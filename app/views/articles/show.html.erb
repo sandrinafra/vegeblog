@@ -1,62 +1,90 @@
 <div id="show_article">
-  <p id="notice"><%= notice %></p>
-  <h3>
+
+  <h2 class="text-center well">
     <%= @article.title %>
-  </h3>
+  </h2>
+
   <div class="row">
-    <div class="col-sm-6 img">
+    <div class="col-sm-6 col-sm-offset-3">
         <%= image_tag @article.image, class: "photo" %>
     </div>
-    <div class="col-sm-6">
-      <p>
-        <%= @article.text %>
-      </p>
+  </div>
+
+  <div class="row">
+    <br>
+    <h4 class="col-sm-10 col-sm-offset-1 text-center"><%= @article.text %></h4>
+  </div>
+  <br>
+
+  <div class="container-fluid">
+    <h3 class="well">Recette</h3>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-1">
+        <p><%= @article.content %></p>
+      </div>
     </div>
   </div>
 
-  <div class="content">
-    <h4>Recette</h4>
-    <p>
-      <%= @article.content %>
-    </p>
-  </div>
-
-  <div class="comment">
-    <h4>Commentaires</h4>
-
+  <div class="container-fluid">
+    <h4 class="well">Commentaires</h4>
     <% @article.comments.each do |comment| %>
-      <div class="comment_user">
-        <%= image_tag comment.user.photo, class: "photo" %>
-        <%= comment.user.lastname %> <%= comment.user.firstname %>
-      	<%= comment.text %>
-      </div>
-      <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
-        <%= link_to '<i class="fa fa-trash"></i>'.html_safe, comment, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <%= image_tag('edit.png', class: "display_comment_form") %>
 
-        <div class="comment_form">
-          <%= form_for(comment) do |f| %>
-            <%= f.text_field :text, value: comment.text %>
-            <%= submit_tag "valider" %>
-          <% end %>
+        <!-- infos user -->
+        <div class="col-sm-2 infos_user text-right">
+          <%= image_tag comment.user.photo, class: "photo" if comment %>
+          <p><span class="label label-primary"><%= comment.user.lastname %> <%= comment.user.firstname %></span></p>
         </div>
-      <% end %>
-        <% if !comment.liked_by?(current_user) %>
-          <%= form_for(@like) do |f| %>
-            <%= f.hidden_field :comment_id, value: comment.id %>
-            <%= image_submit_tag("like.png") %>
+
+      <!-- commentaire -->
+      <div class="col-sm-10 comment_user well">
+        <%= comment.text %>
+        <br>
+        <p><span class="label label-primary"><%= "#{comment.likes.count} " %><i class="fa fa-thumbs-up"></i></span></p>
+
+        <!-- bouton like -->
+        <% if current_user && !comment.liked_by?(current_user) %>
+          <%= form_for(@like, class: 'like_form') do |f| %>
+          <%= f.hidden_field :comment_id, value: comment.id %>
+          <button class="btn btn-info btn-xs">J'aime</button>
           <% end %>
         <% end %>
-        <%= "#{comment.likes.count} likes" %>
-    <% end %>
 
-    <% if current_user %>
-      <%= render 'comments/form' %>
-    <% else %>
-    	<p>Vous devez vous connecter</p>
+        <div class="pull-right">
+          <!-- bouton supprimer -->
+          <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
+            <%= link_to comment, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fa fa-trash"></i>
+
+          <% end %>
+          <!-- bouton editer -->
+          <i class="fa fa-pencil display_comment_form"></i>
+          <div class="comment_form pull-left">
+            <%= form_for(comment) do |f| %>
+              <div class="form-group">
+                <%= f.text_field :text, value: comment.text, class: 'form-control' %>
+              </div>
+              <%= submit_tag "Valider" %>
+            <% end %>
+          </div>
+          <% end %>
+      </div>
+
+
+      </div>
+
+
+      <br>
     <% end %>
   </div>
+
+  <div class="container-fluid">
+    <% if current_user %>
+      <div class="commment_form">
+        <%= render 'comments/form' %>
+      </div>
+    <% else %>
+    	<p>Vous devez vous connecter pour commenter et liker</p>
+    <% end %>
+  </div>
+
 </div>
-
-
-

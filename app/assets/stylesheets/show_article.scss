@@ -1,58 +1,17 @@
 #show_article
 {
   background-color: #fff;
-  margin: auto;
-  width: 80%;
 
-  .img
-  {
-
-    width: 70%;
-    margin: auto;
-    background-color: red;
-  }
   .photo
   {
-    text-align: center;
     width: 100%;
+    margin-right: 10px;
   }
-
   .comment_form
   {
     display: none;
   }
-
-  h3
-  {
-    text-align: center;
-  }
-
-  .content
-  {
-    h4
-    {
-      text-align: center;
-      padding-top: 30px;
-    }
-
-    p
-    {
-      margin: 30px 40px;
-    }
-  }
-
-  .comment
-  {
-    width: 60%;
-    margin-left: 40px;
-
-    h4
-    {
-      text-decoration: underline;
-    }
-  }
-
-  .comment_user
+  .infos_user
   {
     img
     {

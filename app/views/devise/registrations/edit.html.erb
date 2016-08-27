@@ -26,6 +26,7 @@
                 <%= f.email_field :email, autofocus: true %>
               </div>
 
+              <%= image_tag @user.photo %>
               <div class="form-group">
                 <%= f.label :Avatar %><br />
                 <%= f.file_field :photo, autofocus: true %>
@@ -56,14 +57,11 @@
 
             <h4>Supprimer mon compte</h4>
 
-            <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block" %></p>
+            <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block btn-danger" %></p>
           </fieldset>
         </div>
+        <div class="panel-heading"></div>
       </div>
     </div>
   </div>
 </div>
-
-
-
-

@@ -3,4 +3,3 @@ document.addEventListener('turbolinks:load', function(){
 		$(this).next().slideToggle();
 	});
 });
-

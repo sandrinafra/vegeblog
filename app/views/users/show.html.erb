@@ -1,10 +1,10 @@
 <div id="user_show">
 
-	<div class="row detail_user">
-		<div class="col-sm-6 photo_bloc">
+	<div class="row detail_user text-center">
+		<div class="col-md-3 col-md-offset-3 photo_bloc">
 			<%= image_tag @user.photo, class: "photo" %>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-3">
 			<h3><%= @user.lastname %></3>
 			<h4><%= @user.firstname %></h4>
 			<p><%= @user.email %></p>
@@ -84,7 +84,7 @@
 
 		<div class="detail_comment">
 			<h3>Les commentaire que j'ai liké</h3>
-			<table class="table table-striped les_C_L">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Titres</th>
@@ -105,7 +105,9 @@
 							  	<%= "#{like.comment.likes.count} likes" %><span class="caret"></span>
 									</button>
 									<ul class="dropdown-menu">
-											<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+										<% like.comment.likes.each do |like| %>
+												<li class=""><a href="#"><%= like.user.lastname %> <%= like.user.firstname %></a></li>
+										<% end %>
 									</ul>
 								</div>
 							</td>
