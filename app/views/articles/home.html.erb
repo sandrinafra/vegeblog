@@ -1,33 +1,41 @@
 
 <div id="home">
-	<div class="row carousel">
-		<div id="mycarousel" class="carousel slide col-md-6" data-ride="carousel">
-			<ol class="carousel-indicator">
+	<% if notice %>
+		<div class="alert alert-info alert-dismissable fade in text-center">
+			<button class="close" data-dismiss="alert">&times;</button>
+			<p id="notice"><%= notice %></p>
+		</div>
+	<% end %>
+	<div class="row">
+		<div id="mycarousel" class="carousel slide col-md-6" data-ride="carousel" data-interval="3000">
+			<ol class="carousel-indicator list-unstyled">
 				<li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#my_carousel" data-slide-to="1"></li>
 				<li data-target="#my_carousel" data-slide-to="2"></li>
-				<li data-target="#my_carousel" data-slide-to="3"></li>
 			</ol>
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<%= image_tag "tagine.jpg" %>
+					<%= image_tag @articles[rand(1...Article.online.count)].image %>
 				</div>
 				<div class="item">
-					<%= image_tag "patechinoisvegetarien.jpg" %>
+					<%= image_tag @articles[rand(1...Article.online.count)].image %>
 				</div>
 				<div class="item">
-					<%= image_tag "bounty_vegan.jpg" %>
+					<%= image_tag @articles[rand(1...Article.online.count)].image %>
 				</div>
 			</div>
 
-			<a class="left carousel-control" href="#mycarousel" data-slide="prev">
+			<a class="left carousel-control" href="#mycarousel" role='button' data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
 			</a>
-			<a class="right carousel-control" href="#mycarousel" data-slide="next">
+			<a class="right carousel-control" href="#mycarousel" role="button" data-slide="next">
 				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
 			</a>
 		</div>
-		<div class="col-md-6 text_carousel">
+		<div class="col-md-6 text_carousel text-center">
 			<h1>Lorem ipsum</h1>
 			<p>J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)</p>
 		</div>
@@ -40,11 +48,10 @@
 
 			<div class="col-sm-4">
 				<%= link_to article do %>
-					<div class="title">
+					<div class="title text-center">
 						<h3><%= article.title %></h3>
-		      	<p><%= article.text %></p>
 					</div>
-						<%= image_tag article.image %>
+						<%= image_tag article.image, class: "animated pulse" %>
    			<% end %>
 			</div>
 

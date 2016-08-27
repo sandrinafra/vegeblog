@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user.destroy
-      	redirect_to users_index_path, notice: 'User was successfully destroyed.'
+      	redirect_to users_index_path, notice: "L'utilisateur a bien été supprimé"
 
     end
 

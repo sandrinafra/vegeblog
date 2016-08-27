@@ -6,6 +6,8 @@ source 'https://rubygems.org'
 gem 'bootstrap-sass'
 gem 'rake'
 gem 'devise'
+# Gem for environement variables
+gem 'dotenv-rails'
 # Gem for files upload
 gem 'carrierwave'
 # Gem for resizing images
@@ -78,4 +80,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

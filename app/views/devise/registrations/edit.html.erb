@@ -1,35 +1,37 @@
 <div class="container" id="register_edit">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
+    <div class="col-md-6 col-md-offset-3">
       <div class="panel panel-default">
         <div class="panel-heading title">
-          <h2>Editez votre profile</h2>
+          <h2 class="text-center">Editez votre profile</h2>
         </div>
         <div class="panel-body">
-          <fieldset>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
               <div class="form-group">
-                <%= f.label :Nom %><br />
-                <%= f.text_field :lastname, autofocus: true %>
+                <%= f.label :lastname , "Nom" %>
+                <%= f.text_field :lastname, autofocus: true, class: "form-control" %>
               </div>
 
               <div class="form-group">
-                <%= f.label :Prénom %><br />
-                <%= f.text_field :firstname, autofocus: true %>
+                <%= f.label :firstname, "Prénom" %>
+                <%= f.text_field :firstname, autofocus: true, class: "form-control" %>
               </div>
 
               <div class="form-group">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true %>
+                <%= f.label :email %>
+                <%= f.email_field :email, autofocus: true, class: "form-control" %>
               </div>
 
-              <%= image_tag @user.photo %>
+              <div class="text-center">
+                <%= image_tag @user.photo %>
+              </div>
+
               <div class="form-group">
-                <%= f.label :Avatar %><br />
-                <%= f.file_field :photo, autofocus: true %>
+                <%= f.label :photo, "Avatar" %>
+                <%= f.file_field :photo, autofocus: true, class: "form-control" %>
               </div>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -37,28 +39,23 @@
               <% end %>
 
              <div class="form-group">
-                <%= f.label :Mot_de_passe %> <i>(laissez en blanc si vous ne voulez pas changer)</i><br />
-                <%= f.password_field :password, autocomplete: "off" %>
+                <%= f.label :password, "Mot de passe" %> <i>(laissez vide si vous ne voulez pas changer)</i>
+                <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
               </div>
 
               <div class="form-group">
-                <%= f.label :Confirmez_votre_mot_de_passe %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                <%= f.label :password_confirmation, "Confirmez votre mot de passe" %>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
               </div>
               <div class="form-group">
-                <%= f.label :Ancien_mot_de_passe %> <i>(nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)</i><br />
-                <%= f.password_field :current_password, autocomplete: "off" %>
+                <%= f.label :current_password, "Ancien mot de passe" %> <i>(nous avons besoin de votre mot de passe actuel pour confirmer vos modifications)</i><br />
+                <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
               </div>
 
-              <div class="actions">
                 <%= f.submit "Editer", class: "btn btn-lg btn-block" %>
-              </div>
             <% end %>
 
-            <h4>Supprimer mon compte</h4>
-
             <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block btn-danger" %></p>
-          </fieldset>
         </div>
         <div class="panel-heading"></div>
       </div>

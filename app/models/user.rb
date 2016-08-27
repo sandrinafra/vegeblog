@@ -18,8 +18,8 @@ class User < ActiveRecord::Base
 
   validates :firstname, presence: true, format: { with: /\A[[:alpha:] \-]+\z/,
 	message: "Votre prénom ne peut comporter que des lettres"}
-  validates :firstname, presence: true, format: { with: /\A[[:alpha:] \-]+\z/,
-  message: "Votre prénom ne peut comporter que des lettres"}
+  validates :lastname, presence: true, format: { with: /\A[[:alpha:] \-]+\z/,
+  message: "Votre nom ne peut comporter que des lettres"}
   validates_processing_of :photo
   validate :photo_size_validation
 

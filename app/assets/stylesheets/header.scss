@@ -4,6 +4,7 @@ header
 	text-align: center;
   padding: 10px;
   text-decoration: inherit;
+	margin-bottom: 20px;
 
 	.logo
 	{
@@ -23,13 +24,10 @@ header
     }
   }
 
-	.sociaux
+	.social
 	{
-		margin-top: 8px;
-
-		img
-		{
-			margin: 5px;
-		}
+		font-size: 1.8em;
+		margin-top: 7px;
+		padding: 5px;
 	}
 }

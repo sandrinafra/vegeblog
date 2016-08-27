@@ -20,7 +20,7 @@
     <h3 class="well">Recette</h3>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-1">
-        <p><%= @article.content %></p>
+        <p><%= simple_format(@article.content) %></p>
       </div>
     </div>
   </div>
@@ -29,11 +29,11 @@
     <h4 class="well">Commentaires</h4>
     <% @article.comments.each do |comment| %>
 
-        <!-- infos user -->
-        <div class="col-sm-2 infos_user text-right">
-          <%= image_tag comment.user.photo, class: "photo" if comment %>
-          <p><span class="label label-primary"><%= comment.user.lastname %> <%= comment.user.firstname %></span></p>
-        </div>
+      <!-- infos user -->
+      <div class="col-sm-2 infos_user text-center">
+        <%= image_tag comment.user.photo, class: "photo" if comment %>
+        <p><span class="label label-primary"><%= comment.user.lastname %> <%= comment.user.firstname %></span></p>
+      </div>
 
       <!-- commentaire -->
       <div class="col-sm-10 comment_user well">
@@ -52,7 +52,7 @@
         <div class="pull-right">
           <!-- bouton supprimer -->
           <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
-            <%= link_to comment, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <%= link_to comment, method: :delete, data: { confirm: 'Êtes-vous sûr ??' } do %>
             <i class="fa fa-trash"></i>
 
           <% end %>
@@ -83,7 +83,7 @@
         <%= render 'comments/form' %>
       </div>
     <% else %>
-    	<p>Vous devez vous connecter pour commenter et liker</p>
+    	<h3 id="not_connected" class="well text-center">Vous devez vous <%= link_to "connecter", new_user_session_path %> ou vous <%= link_to "inscrire", new_user_registration_path %> pour commenter et liker</h3>
     <% end %>
   </div>
 

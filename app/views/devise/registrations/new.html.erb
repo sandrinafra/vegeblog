@@ -13,26 +13,26 @@
 
             <%= devise_error_messages! %>
             <div class="form-group">
-              <%= f.label :Prénom %><br />
+              <%= f.label :firstname, "Prénom" %>
               <%= f.text_field :firstname, autofocus: true, class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label :Nom %><br />
+              <%= f.label :lastname, "Nom" %>
               <%= f.text_field :lastname, class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label :email %><br />
+              <%= f.label :email %>
               <%= f.email_field :email, class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label :Mot_de_passe %>
+              <%= f.label :password, "Mot de passe" %>
               <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
+                <em>(<%= @minimum_password_length %> caractères minimum)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
             </div>
             <div class="form-group">
-              <%= f.label :Confirmez_votre_mot_de_passe %><br />
+              <%= f.label :password_confirmation, "Confirmez votre mot de passe" %>
               <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
             </div>
 

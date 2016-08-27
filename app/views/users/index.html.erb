@@ -1,12 +1,20 @@
-<div id="user_index">
-	<h4>Mes utilisateurs</h4>
+<% if notice %>
+  <div class="alert alert-info alert-dismissable fade in text-center">
+    <button class="close" data-dismiss="alert">&times;</button>
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+
+<h4 class="text-center">Mes utilisateurs</h4>
+<br>
+<div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
 			<tr>
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th>Email</th>
-				<th colspan="2"></th>
+				<th colspan="2">Actions</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -15,8 +23,8 @@
 					<td><%= user.firstname %></td>
 					<td><%= user.lastname %></td>
 					<td><%= user.email %></td>
-	        		<td><%= link_to 'Supprimer', users_destroy_path(id: user.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	        		<td><%= link_to 'Afficher', users_show_path(id: user.id)%></td>
+      		<td><%= link_to 'Détails', users_show_path(id: user.id)%></td>
+					<td><%= link_to 'Supprimer', users_destroy_path(id: user.id), method: :delete, data: { confirm: 'Êtes-vous sûr ??' } if !user.admin? %></td>
 				</tr>
 			<% end %>
 		</tbody>

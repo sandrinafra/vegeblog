@@ -1,58 +1,67 @@
 <div id="user_show">
 
-	<div class="row detail_user text-center">
-		<div class="col-md-3 col-md-offset-3 photo_bloc">
-			<%= image_tag @user.photo, class: "photo" %>
-		</div>
-		<div class="col-sm-3">
-			<h3><%= @user.lastname %></3>
-			<h4><%= @user.firstname %></h4>
-			<p><%= @user.email %></p>
-			<% if current_user.id == @user.id %>
-				<%= link_to "edit", edit_user_registration_path, class: "btn btn-info" %>
-			<% end %>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="row detail_user text-center">
+				<div class="col-md-3 col-md-offset-3 photo_bloc">
+					<%= image_tag @user.photo, class: "photo" %>
+				</div>
+				<div class="col-sm-3">
+					<h3><%= @user.lastname %></3>
+					<h4><%= @user.firstname %></h4>
+					<p><%= @user.email %></p>
+					<% if current_user.id == @user.id %>
+						<%= link_to "edit", edit_user_registration_path, class: "btn btn-info" %>
+					<% end %>
+				</div>
+			</div>
 		</div>
 	</div>
 
-		<div class="detail_comment">
-			<h3>Mes commentaires</h3>
-			<table class="table table-str">
+	<div class="detail_comment">
+		<h3 class="text-center">Mes commentaires</h3>
+		<div class="table-responsive">
+			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Titres</th>
+						<th>Titre</th>
 						<th>Commentaires</th>
 						<th>Nb de likes</th>
 					</tr>
 				</thead>
 				<tbody>
 					<% @user.comments.each do |comment| %>
-							<tr>
-								<td><%= comment.article.title %></td>
-								<td><%= comment.text %></td>
-								<td>
-									<div class="dropdown">
-										<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
-								  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
-										</button>
-										<ul class="dropdown-menu">
+						<tr>
+							<td><%= comment.article.title %></td>
+							<td><%= comment.text %></td>
+							<td>
+								<div class="dropup">
+									<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
+										<%= "#{comment.likes.count} likes" %><span class="caret"></span>
+									</button>
+									<% if comment.likes.count != 0 %>
+										<ul class="dropdown-menu dropdown-menu-right">
 											<% comment.likes.each do |like| %>
-												<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+											<li><a href="#"><%= like.user.lastname %> <%= like.user.firstname %></a></li>
 											<% end %>
 										</ul>
-									</div>
-								</td>
-						  <tr>
+									<% end %>
+								</div>
+							</td>
+						<tr>
 					<% end %>
 				</tbody>
 			</table>
 		</div>
+	</div>
 
-		<div class="detail_comment">
-			<h3>Mes commentaires likés</h3>
+	<div class="detail_comment">
+		<h3 class="text-center">Mes commentaires likés</h3>
+		<div class="table-responsive">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Titres</th>
+						<th>Titre</th>
 						<th>Commentaires</th>
 						<th>Nb de likes</th>
 					</tr>
@@ -64,13 +73,13 @@
 								<td><%= comment.article.title %></td>
 								<td><%= comment.text %></td>
 								<td>
-									<div class="dropdown">
+									<div class="dropup">
 										<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
 								  	<%= "#{comment.likes.count} likes" %><span class="caret"></span>
 										</button>
-										<ul class="dropdown-menu">
+										<ul class="dropdown-menu dropdown-menu-right">
 											<% comment.likes.each do |like| %>
-												<li>- <%= like.user.lastname %> <%= like.user.firstname %></li>
+												<li><a href="#"><%= like.user.lastname %> <%= like.user.firstname %></a></li>
 											<% end %>
 										</ul>
 									</div>
@@ -81,13 +90,15 @@
 				</tbody>
 			</table>
 		</div>
+	</div>
 
-		<div class="detail_comment">
-			<h3>Les commentaire que j'ai liké</h3>
+	<div class="detail_comment">
+		<h3 class="text-center">Les commentaire que j'ai liké</h3>
+		<div class="table-responsive">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Titres</th>
+						<th>Titre</th>
 						<th>Commentaires</th>
 						<th>Posteur</th>
 						<th>Nb de likes</th>
@@ -100,13 +111,13 @@
 							<td><%= like.comment.text %></td>
 							<td><%= like.comment.user.lastname %> <%= like.comment.user.firstname %></td>
 							<td>
-								<div class="dropdown">
+								<div class="dropup">
 									<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown">
 							  	<%= "#{like.comment.likes.count} likes" %><span class="caret"></span>
 									</button>
-									<ul class="dropdown-menu">
+									<ul class="dropdown-menu dropdown-menu-right">
 										<% like.comment.likes.each do |like| %>
-												<li class=""><a href="#"><%= like.user.lastname %> <%= like.user.firstname %></a></li>
+												<li><a href="#"><%= like.user.lastname %> <%= like.user.firstname %></a></li>
 										<% end %>
 									</ul>
 								</div>
@@ -116,5 +127,6 @@
 				</tbody>
 			</table>
 		</div>
+	</div>
 
 </div>
