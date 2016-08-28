@@ -47,12 +47,12 @@
 			<div class="row">
 		<% end %>
 
-			<div class="col-sm-4">
+			<div class="col-sm-4 animate">
 				<%= link_to article do %>
 					<div class="title text-center">
 						<h3><%= article.title %></h3>
 					</div>
-						<%= image_tag article.image, class: "animated pulse" %>
+					<%= image_tag article.image %>
    			<% end %>
 			</div>
 
