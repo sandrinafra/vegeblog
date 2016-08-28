@@ -6,6 +6,21 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def home
     @articles = Article.online
+
+    # choix des photos pour le carrousel
+    nb_max = @articles.count - 1
+    @nb1 = rand(0..nb_max)
+    @nb2 = rand(0..nb_max)
+    @nb3 = rand(0..nb_max)
+
+    if nb_max > 1
+      while @nb2 == @nb1 do
+        @nb2 = rand(0..nb_max)
+      end
+      while @nb3 == @nb2 || @nb3 == @nb1 do
+        @nb3 = rand(0..nb_max)
+      end
+    end
   end
 
   def index

@@ -16,14 +16,15 @@
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<%= image_tag @articles[rand(1...Article.online.count)].image %>
+					<%= image_tag @articles[@nb1].image %>
 				</div>
 				<div class="item">
-					<%= image_tag @articles[rand(1...Article.online.count)].image %>
+					<%= image_tag @articles[@nb2].image %>
 				</div>
 				<div class="item">
-					<%= image_tag @articles[rand(1...Article.online.count)].image %>
+					<%= image_tag @articles[@nb3].image %>
 				</div>
+				
 			</div>
 
 			<a class="left carousel-control" href="#mycarousel" role='button' data-slide="prev">
