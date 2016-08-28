@@ -44,8 +44,8 @@ else
 end
 
 42.times do |i|
-	like = Like.new user_id: 1,
-									comment_id: 1
+	like = Like.new user_id: rand(1..User.count),
+									comment_id: rand(1..Comment.count)
 	if like.save
 	  puts check + "like #{like.id} created" + end_color
 	else

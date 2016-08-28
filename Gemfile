@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 
-
 ### Personal gems ###
-
 
 gem 'bootstrap-sass'
 gem 'rake'
@@ -15,27 +13,10 @@ gem 'carrierwave'
 gem 'mini_magick'
 # Add font awesome gem for stars in grade page
 gem "font-awesome-rails"
-# Add Ransack gem for intern research
-# gem "ransack"
-# gem for schedule tasks through sidekiq
-# gem "sidekiq-cron", "~> 0.4.0"
-# Gem for sidekiq web UI interface
-# gem 'sinatra', :require => nil
-# Gem for asynchronous tasks
-# gem 'sidekiq'
-# Gem for environement variables
-# gem 'dotenv-rails'
-# Use mysql as the database for Active Record
-# gem 'mysql2', '>= 0.3.13', '< 0.5'
-# Gems for pdf generation
-# gem 'wicked_pdf'
-# gem 'wkhtmltopdf-binary'
 # Add mail gem for send and recieve emails
 # gem "mail"
 
 ######################
-
-
 
 gem 'autoprefixer-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -78,13 +59,12 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'sqlite3'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
 
 group :production do
+  # gems for heroku
   gem 'pg'
-  # gem for heroku
   gem 'rails_12factor'
 end
