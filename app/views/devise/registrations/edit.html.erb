@@ -54,8 +54,13 @@
 
                 <%= f.submit "Editer", class: "btn btn-lg btn-block" %>
             <% end %>
-
-            <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block btn-danger" %></p>
+            <% if current_user.user? %>
+              <br>
+              <div class="alert alert-danger">
+                <p><i class="fa fa-exclamation-triangle"></i> Attention cette action est irréversible !! </p>
+                <p><%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Etes-vous sûr ?" }, method: :delete, class: "btn btn-lg btn-block btn-danger" %></p>
+              </div>
+            <% end %>
         </div>
         <div class="panel-heading"></div>
       </div>

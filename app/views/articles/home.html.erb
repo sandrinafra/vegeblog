@@ -1,7 +1,7 @@
 
 <div id="home">
 	<% if notice %>
-		<div class="alert alert-info alert-dismissable fade in text-center">
+		<div class="alert alert-info alert-dismissable animated tada fade in text-center">
 			<button class="close" data-dismiss="alert">&times;</button>
 			<p id="notice"><%= notice %></p>
 		</div>
@@ -24,7 +24,7 @@
 				<div class="item">
 					<%= image_tag @articles[@nb3].image %>
 				</div>
-				
+
 			</div>
 
 			<a class="left carousel-control" href="#mycarousel" role='button' data-slide="prev">

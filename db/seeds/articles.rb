@@ -14,14 +14,11 @@ puts end_color
 #                Creating Articles	             #
 #************************************************#
 
-require 'pathname'
-RailsRoot = Pathname.new(Rails.root).expand_path
-
 leonard = Article.new title: 'Pâtes en sauce',
 					text: '«J’ai très tôt renoncé à la viande et un jour viendra où les hommes tels que moi proscriront le meurtre des animaux comme ils proscrivent aujourd’hui le meurtre de leurs semblables.» (Léonard de Vinci)',
 					status: 'En ligne',
 					content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut ligula aliquet, tempus sem sed, sollicitudin nisl. Aenean nec nunc ligula. Mauris auctor mi sit amet diam mattis rhoncus. Aliquam pretium leo odio, sit amet molestie lorem eleifend non. Pellentesque eget est blandit, sollicitudin justo quis, bibendum metus. Proin eleifend sapien at ligula rutrum sollicitudin. Praesent facilisis ac elit ut interdum. ",
-					image: open(RailsRoot + 'app/assets/images/food/pasta.jpg')
+					image: open(Rails.root + 'app/assets/images/food/pasta.jpg')
 if leonard.save
 	puts "creation article leonard OK"
 else
