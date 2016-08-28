@@ -35,53 +35,52 @@
     <h4 class="well">Commentaires</h4>
     <% @article.comments.each do |comment| %>
 
-      <!-- infos user -->
-      <div class="col-sm-2 infos_user text-center">
-        <%= image_tag comment.user.photo, class: "photo" if comment %>
-        <p><span class="label label-primary"><%= comment.user.lastname %> <%= comment.user.firstname %></span></p>
-      </div>
+      <div class="comment">
+        <!-- infos user -->
+        <div class="col-sm-2 infos_user text-center">
+          <%= image_tag comment.user.photo, class: "photo" if comment %>
+          <p><span class="label label-primary"><%= comment.user.lastname %> <%= comment.user.firstname %></span></p>
+        </div>
 
-      <!-- commentaire -->
-      <div class="col-sm-10 comment_user well">
-        <div class="comment_text"><%= comment.text %></div>
+        <!-- commentaire -->
+        <div class="col-sm-10 comment_user well">
+          <div class="comment_text"><%= comment.text %></div>
           <!-- bouton editer -->
-            <i class="fa fa-pencil display_comment_form"></i>
+          <i class="fa fa-pencil display_comment_form"></i>
 
           <div class="comment_form">
             <%= form_for(comment) do |f| %>
-              <div class="form-group">
-                <%= f.text_field :text, value: comment.text, class: 'form-control' %>
-              </div>
-              <%= submit_tag "Valider", class: "btn btn-default" %>
-              <%= link_to 'Annuler', '#', class: "display_comment_form btn btn-default" %>
+            <div class="form-group">
+              <%= f.text_field :text, value: comment.text, class: 'form-control' %>
+            </div>
+            <%= submit_tag "Valider", class: "btn btn-default" %>
+            <%= link_to 'Annuler', '#', class: "display_comment_form btn btn-default" %>
             <% end %>
           </div>
-        <br>
-        <p><span class="label label-primary"><%= "#{comment.likes.count} " %><i class="fa fa-thumbs-up"></i></span></p>
+          <br>
+          <p><span class="label label-primary"><%= "#{comment.likes.count} " %><i class="fa fa-thumbs-up"></i></span></p>
 
-        <!-- bouton like -->
-        <% if current_user && !comment.liked_by?(current_user) %>
+          <!-- bouton like -->
+          <% if current_user && !comment.liked_by?(current_user) %>
           <%= form_for(@like, class: 'like_form') do |f| %>
           <%= f.hidden_field :comment_id, value: comment.id %>
           <button class="btn btn-info btn-xs">J'aime</button>
           <% end %>
-        <% end %>
-
-        <div class="pull-right">
-          <!-- bouton supprimer -->
-          <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
-            <%= link_to comment, method: :delete, data: { confirm: 'Êtes-vous sûr ??' } do %>
-            <i class="fa fa-trash"></i>
-
           <% end %>
-          <% end %>
+
+          <div class="pull-right">
+            <!-- bouton supprimer -->
+            <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
+              <%= link_to comment, class: 'delete_comment', method: :delete, data: { confirm: 'Êtes-vous sûr ??' }, remote: true do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            <% end %>
+          </div>
+
+        </div>
+
+        <br>
       </div>
-
-
-      </div>
-
-
-      <br>
     <% end %>
   </div>
 

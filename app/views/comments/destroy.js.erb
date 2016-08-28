@@ -1,0 +1,9 @@
+$(document).ready(function() {
+  return $(".delete_comment").on("ajax:success", function(e, data, status, xhr) {
+
+    // Suppression du commentaire
+    $(this).closest('.comment').addClass("animated fadeOut").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).remove();
+    });
+  });
+});

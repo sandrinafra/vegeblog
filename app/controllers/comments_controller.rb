@@ -61,6 +61,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to "/articles/#{@comment.article_id}", notice: 'Votre commentaire à bien été supprimé' }
       format.json { head :no_content }
+      format.js   { render layout: false }
     end
   end
 
