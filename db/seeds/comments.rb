@@ -22,7 +22,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -32,7 +32,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -42,7 +42,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -54,7 +54,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -64,7 +64,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -74,7 +74,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -86,7 +86,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -113,7 +113,7 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end
 
@@ -123,6 +123,6 @@ comment = Comment.new text: 'Super la recette!!',
 if comment.save
   puts check + "comment #{comment.id} created" + end_color
 else
-  puts red + "error creating comment " + comment.id + end_color
+  puts red + "error creating comment #{comment.id}" + end_color
   puts " - " + comment.errors.full_messages.first
 end

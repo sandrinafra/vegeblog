@@ -16,13 +16,19 @@
 
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<%= image_tag @articles[@nb1].image %>
+					<%= link_to @articles[@nb1] do %>
+						<%= image_tag @articles[@nb1].image %>
+					<% end %>
 				</div>
 				<div class="item">
-					<%= image_tag @articles[@nb2].image %>
+					<%= link_to @articles[@nb2] do %>
+						<%= image_tag @articles[@nb2].image %>
+					<% end %>
 				</div>
 				<div class="item">
-					<%= image_tag @articles[@nb3].image %>
+					<%= link_to @articles[@nb3] do %>
+						<%= image_tag @articles[@nb3].image %>
+					<% end %>
 				</div>
 
 			</div>

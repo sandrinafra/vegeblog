@@ -45,13 +45,15 @@
       <div class="col-sm-10 comment_user well">
         <div class="comment_text"><%= comment.text %></div>
           <!-- bouton editer -->
-          <i class="fa fa-pencil display_comment_form"></i>
-          <div class="comment_form pull-left">
+            <i class="fa fa-pencil display_comment_form"></i>
+
+          <div class="comment_form">
             <%= form_for(comment) do |f| %>
               <div class="form-group">
                 <%= f.text_field :text, value: comment.text, class: 'form-control' %>
               </div>
-              <%= submit_tag "Valider", class: "btn" %>
+              <%= submit_tag "Valider", class: "btn btn-default" %>
+              <%= link_to 'Annuler', '#', class: "display_comment_form btn btn-default" %>
             <% end %>
           </div>
         <br>
