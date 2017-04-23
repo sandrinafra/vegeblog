@@ -15,10 +15,10 @@ puts end_color
 #************************************************#
 
 sandrina = User.new email: 'sandrinafranco0@gmail.com',
-					password: 'aaaaaaaa',
-					password_confirmation: 'aaaaaaaa',
+					password: ENV['ADMIN_PASSWORD'],
+					password_confirmation: ENV['ADMIN_PASSWORD'],
 					firstname: 'sandrina',
-					lastname: 'bernard',
+					lastname: 'franco',
 					status: 'admin'
 if sandrina.save
 	puts check + "user " + sandrina.firstname + " created" + end_color
