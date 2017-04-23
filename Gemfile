@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
 
 ### Personal gems ###
 
@@ -17,6 +18,7 @@ gem 'mini_magick'
 gem "font-awesome-rails"
 # puma in place of webbrick
 gem 'puma'
+
 ######################
 
 gem 'autoprefixer-rails'
