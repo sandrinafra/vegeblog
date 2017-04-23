@@ -32,7 +32,16 @@
   </div>
 
   <div class="container-fluid">
-    <h4 class="well">Commentaires</h4>
+    <h3 class="well">Commentaires</h3>
+
+    <% if current_user %>
+      <div class="commment_form">
+        <%= render 'comments/form' %>
+      </div>
+    <% else %>
+    	<h3 id="not_connected" class="well text-center">Vous devez vous <%= link_to "connecter", new_user_session_path %> ou vous <%= link_to "inscrire", new_user_registration_path %> pour commenter et liker</h3>
+    <% end %>
+
     <% @article.comments.each do |comment| %>
 
       <div class="comment">
@@ -45,8 +54,10 @@
         <!-- commentaire -->
         <div class="col-sm-10 comment_user well">
           <div class="comment_text"><%= comment.text %></div>
-          <!-- bouton editer -->
-          <i class="fa fa-pencil display_comment_form"></i>
+		  <% if current_user && (comment.user.id == current_user.id || current_user.admin?) %>
+	          <!-- bouton editer -->
+	          <i class="fa fa-pencil display_comment_form"></i>
+		  <% end %>
 
           <div class="comment_form">
             <%= form_for(comment) do |f| %>
@@ -81,16 +92,6 @@
 
         <br>
       </div>
-    <% end %>
-  </div>
-
-  <div class="container-fluid">
-    <% if current_user %>
-      <div class="commment_form">
-        <%= render 'comments/form' %>
-      </div>
-    <% else %>
-    	<h3 id="not_connected" class="well text-center">Vous devez vous <%= link_to "connecter", new_user_session_path %> ou vous <%= link_to "inscrire", new_user_registration_path %> pour commenter et liker</h3>
     <% end %>
   </div>
 
