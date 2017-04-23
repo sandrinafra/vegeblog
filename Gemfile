@@ -15,7 +15,8 @@ gem 'fog'
 gem 'mini_magick'
 # Add font awesome gem for stars in grade page
 gem "font-awesome-rails"
-
+# puma in place of webbrick
+gem 'puma'
 ######################
 
 gem 'autoprefixer-rails'
