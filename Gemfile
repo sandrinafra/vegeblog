@@ -7,10 +7,10 @@ gem 'rake'
 gem 'devise'
 # Gem for environement variables
 gem 'dotenv-rails'
-# Gem for carrierwave AWS S3 communication
-gem 'fog'
 # Gem for files upload
 gem 'carrierwave'
+# Gem for carrierwave AWS S3 communication
+gem 'fog'
 # Gem for resizing images
 gem 'mini_magick'
 # Add font awesome gem for stars in grade page
